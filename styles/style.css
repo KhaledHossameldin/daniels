@@ -1,0 +1,2188 @@
+:root {
+    --faded-black: rgba(0, 0, 0, 0.65);
+    --more-faded-black: rgba(0, 0, 0, 0.15);
+    --section-color: rgb(247, 247, 247);
+    --faded-white: rgba(255, 255, 255, 0.8);
+    --more-faded-white: rgba(255, 255, 255, 0.9);
+    --dark-gray: rgb(91, 91, 91);
+    --input-color: rgb(244, 244, 244);
+
+    --animation-duration: 0.5s;
+    --counting-duration: 1.5s;
+}
+
+html {
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: "Montserrat";
+}
+
+.colored-section {
+    background-color: var(--section-color);
+}
+
+section h2 {
+    font-weight: 900;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 30px;
+    background-image: url('../images/dots.png');
+    z-index: -1;
+}
+
+.rounded-link {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.rounded-link:hover {
+    background-color: white;
+    color: black;
+}
+
+button.btn.btn-dark {
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-color: #424649;
+}
+
+/* Navbar */
+nav h1 {
+    font-weight: 800;
+}
+
+.nav-link {
+    font-size: 0.75rem;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: var(--animation-duration) width;
+    -webkit-transition: var(--animation-duration) width;
+    -moz-transition: var(--animation-duration) width;
+    -ms-transition: var(--animation-duration) width;
+    -o-transition: var(--animation-duration) width;
+}
+
+.nav-link.active::before {
+    width: 100%;
+}
+
+/* Header */
+header {
+    background: linear-gradient(var(--faded-black), var(--faded-black)), url('../images/header.jpg');
+    background-size: 100% 100%;
+}
+
+header .container {
+    padding-top: 70px;
+}
+
+header .header-link {
+    background-color: var(--faded-black);
+    width: 35px;
+    height: 35px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+/* About */
+#about div.hero-image::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    background-image: url('../images/dots.png');
+    z-index: -1;
+
+}
+
+#about h2 {
+    font-weight: 800;
+}
+
+#about div.progress {
+    --bs-progress-height: 1.5rem;
+    box-shadow: 0px 2px 7px var(--more-faded-black) inset;
+}
+
+/* Services */
+.services-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--section-color);
+    font-size: 1.75rem;
+    transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -webkit-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -moz-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -ms-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -o-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+}
+
+.services-item h3 {
+    font-weight: 800;
+}
+
+.services-item:hover .services-icon {
+    color: white;
+    background-color: black;
+}
+
+/* Works */
+#works .nav-link[role="tab"] {
+    font-weight: 800;
+}
+
+.works-item p {
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transition: var(--animation-duration) transform;
+    -webkit-transition: var(--animation-duration) transform;
+    -moz-transition: var(--animation-duration) transform;
+    -ms-transition: var(--animation-duration) transform;
+    -o-transition: var(--animation-duration) transform;
+}
+
+.works-item:hover .works-item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.works-item:hover p {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.works-item:hover .works-links {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.works-item-overlay {
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -webkit-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -moz-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -ms-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -o-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+}
+
+.works-links {
+    transform: translateY(5px);
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+    transition: var(--animation-duration) transform;
+    -webkit-transition: var(--animation-duration) transform;
+    -moz-transition: var(--animation-duration) transform;
+    -ms-transition: var(--animation-duration) transform;
+    -o-transition: var(--animation-duration) transform;
+}
+
+/* Clients */
+#clients div.carousel-item img {
+    width: 90px;
+}
+
+#clients div.carousel-item div div p {
+    font-size: 0.75rem;
+}
+
+#clients .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+}
+
+/* Team */
+.team-item-bottom {
+    background-color: var(--dark-gray);
+}
+
+#team img {
+    transition: var(--animation-duration) transform;
+    -webkit-transition: var(--animation-duration) transform;
+    -moz-transition: var(--animation-duration) transform;
+    -ms-transition: var(--animation-duration) transform;
+    -o-transition: var(--animation-duration) transform;
+}
+
+#team img:hover,
+.team-item-overlay:hover+img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.team-item-overlay {
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    background-color: var(--more-faded-white);
+    opacity: 0;
+    transform: scale(0.5) rotateY(180deg);
+    -webkit-transform: scale(0.5) rotateY(180deg);
+    -moz-transform: scale(0.5) rotateY(180deg);
+    -ms-transform: scale(0.5) rotateY(180deg);
+    -o-transform: scale(0.5) rotateY(180deg);
+    transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -webkit-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -moz-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -ms-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+    -o-transition: var(--animation-duration) transform, var(--animation-duration) opacity;
+}
+
+.team-item:hover .team-item-overlay {
+    opacity: 1;
+    transform: scale(1) rotateY(0);
+    -webkit-transform: scale(1) rotateY(0);
+    -moz-transform: scale(1) rotateY(0);
+    -ms-transform: scale(1) rotateY(0);
+    -o-transform: scale(1) rotateY(0);
+}
+
+.team-item-link {
+    width: 45px;
+    height: 45px;
+}
+
+/* Contact */
+#contact input,
+#contact textarea {
+    background-color: var(--input-color);
+    border-color: var(--input-color);
+}
+
+.contact-info-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--section-color);
+    transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -webkit-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -moz-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -ms-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+    -o-transition: var(--animation-duration) color, var(--animation-duration) background-color;
+}
+
+.contact-info-item:hover .contact-info-icon {
+    color: white;
+    background-color: black;
+}
+
+/* Footer */
+footer p {
+    font-size: 0.8rem;
+}
+
+/* Custom Fonts */
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Thin.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-ExtraLight.ttf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-ExtraBold.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat-Black.ttf');
+    font-weight: 900;
+}
+
+/* Animations */
+header p span::after {
+    content: "";
+    animation: typing 4s infinite;
+    -webkit-animation: typing 4s infinite;
+}
+
+@keyframes typing {
+
+    0%,
+    10%,
+    100% {
+        content: "Larry Daniels";
+    }
+
+    11%,
+    98.8% {
+        content: "Larry Daniel";
+    }
+
+    12%,
+    97.61% {
+        content: "Larry Danie";
+    }
+
+    13%,
+    96.42% {
+        content: "Larry Dani";
+    }
+
+    14%,
+    95.23% {
+        content: "Larry Dan";
+    }
+
+    15%,
+    94.04% {
+        content: "Larry Da";
+    }
+
+    16%,
+    92.85% {
+        content: "Larry D";
+    }
+
+    17%,
+    91.66% {
+        content: "Larry ";
+    }
+
+    18%,
+    90.47% {
+        content: "Larry";
+    }
+
+    19%,
+    89.28% {
+        content: "Larr";
+    }
+
+    20%,
+    88.09% {
+        content: "Lar";
+    }
+
+    21%,
+    86.9% {
+        content: "La";
+    }
+
+    22%,
+    85.71% {
+        content: "L";
+    }
+
+    23%,
+    54.15%,
+    84.52% {
+        content: "";
+    }
+
+    24%,
+    52.8%,
+    55.5%,
+    83.33% {
+        content: "D";
+    }
+
+    25%,
+    51.45%,
+    56.85%,
+    82.14% {
+        content: "De";
+    }
+
+    26%,
+    50.1% {
+        content: "Dev";
+    }
+
+    27%,
+    48.75% {
+        content: "Deve";
+    }
+
+    28%,
+    47.4% {
+        content: "Devel";
+    }
+
+    29%,
+    46.05% {
+        content: "Develo";
+    }
+
+    30%,
+    44.7% {
+        content: "Develop";
+    }
+
+    31%,
+    43.35% {
+        content: "Develope";
+    }
+
+    32%,
+    42% {
+        content: "Developer";
+    }
+
+    58.2%,
+    80.95% {
+        content: "Des";
+    }
+
+    59.55%,
+    79.76% {
+        content: "Desi";
+    }
+
+    60.9%,
+    78.57% {
+        content: "Desig";
+    }
+
+    62.25%,
+    77.38% {
+        content: "Design";
+    }
+
+    63.6%,
+    76.19% {
+        content: "Designe";
+    }
+
+    65%,
+    75% {
+        content: "Designer";
+    }
+}
+
+.stats .happy-customer::after {
+    content: "850";
+    font-weight: 900;
+    animation: happy-customers var(--counting-duration);
+    -webkit-animation: happy-customers var(--counting-duration);
+}
+
+@keyframes happy-customers {
+    0% {
+        content: "8"
+    }
+
+    1% {
+        content: "17"
+    }
+
+    2% {
+        content: "25"
+    }
+
+    3% {
+        content: "34"
+    }
+
+    4% {
+        content: "42"
+    }
+
+    5% {
+        content: "50"
+    }
+
+    6% {
+        content: "59"
+    }
+
+    7% {
+        content: "67"
+    }
+
+    8% {
+        content: "76"
+    }
+
+    9% {
+        content: "84"
+    }
+
+    10% {
+        content: "93"
+    }
+
+    11% {
+        content: "101"
+    }
+
+    12% {
+        content: "109"
+    }
+
+    13% {
+        content: "118"
+    }
+
+    14% {
+        content: "126"
+    }
+
+    15% {
+        content: "135"
+    }
+
+    16% {
+        content: "143"
+    }
+
+    17% {
+        content: "151"
+    }
+
+    18% {
+        content: "160"
+    }
+
+    19% {
+        content: "168"
+    }
+
+    20% {
+        content: "177"
+    }
+
+    21% {
+        content: "185"
+    }
+
+    22% {
+        content: "194"
+    }
+
+    23% {
+        content: "202"
+    }
+
+    24% {
+        content: "210"
+    }
+
+    25% {
+        content: "219"
+    }
+
+    26% {
+        content: "227"
+    }
+
+    27% {
+        content: "236"
+    }
+
+    28% {
+        content: "244"
+    }
+
+    29% {
+        content: "252"
+    }
+
+    30% {
+        content: "261"
+    }
+
+    31% {
+        content: "269"
+    }
+
+    32% {
+        content: "278"
+    }
+
+    33% {
+        content: "286"
+    }
+
+    34% {
+        content: "295"
+    }
+
+    35% {
+        content: "303"
+    }
+
+    36% {
+        content: "311"
+    }
+
+    37% {
+        content: "320"
+    }
+
+    38% {
+        content: "328"
+    }
+
+    39% {
+        content: "337"
+    }
+
+    40% {
+        content: "345"
+    }
+
+    41% {
+        content: "353"
+    }
+
+    42% {
+        content: "362"
+    }
+
+    43% {
+        content: "370"
+    }
+
+    44% {
+        content: "379"
+    }
+
+    45% {
+        content: "387"
+    }
+
+    46% {
+        content: "396"
+    }
+
+    47% {
+        content: "404"
+    }
+
+    48% {
+        content: "412"
+    }
+
+    49% {
+        content: "421"
+    }
+
+    50% {
+        content: "429"
+    }
+
+    51% {
+        content: "438"
+    }
+
+    52% {
+        content: "446"
+    }
+
+    53% {
+        content: "454"
+    }
+
+    54% {
+        content: "463"
+    }
+
+    55% {
+        content: "471"
+    }
+
+    56% {
+        content: "480"
+    }
+
+    57% {
+        content: "488"
+    }
+
+    58% {
+        content: "497"
+    }
+
+    59% {
+        content: "505"
+    }
+
+    60% {
+        content: "513"
+    }
+
+    61% {
+        content: "522"
+    }
+
+    62% {
+        content: "530"
+    }
+
+    63% {
+        content: "539"
+    }
+
+    64% {
+        content: "547"
+    }
+
+    65% {
+        content: "555"
+    }
+
+    66% {
+        content: "564"
+    }
+
+    67% {
+        content: "572"
+    }
+
+    68% {
+        content: "581"
+    }
+
+    69% {
+        content: "589"
+    }
+
+    70% {
+        content: "598"
+    }
+
+    71% {
+        content: "606"
+    }
+
+    72% {
+        content: "614"
+    }
+
+    73% {
+        content: "623"
+    }
+
+    74% {
+        content: "631"
+    }
+
+    75% {
+        content: "640"
+    }
+
+    76% {
+        content: "648"
+    }
+
+    77% {
+        content: "656"
+    }
+
+    78% {
+        content: "665"
+    }
+
+    79% {
+        content: "673"
+    }
+
+    80% {
+        content: "682"
+    }
+
+    81% {
+        content: "690"
+    }
+
+    82% {
+        content: "699"
+    }
+
+    83% {
+        content: "707"
+    }
+
+    84% {
+        content: "715"
+    }
+
+    85% {
+        content: "724"
+    }
+
+    86% {
+        content: "732"
+    }
+
+    87% {
+        content: "741"
+    }
+
+    88% {
+        content: "749"
+    }
+
+    89% {
+        content: "757"
+    }
+
+    90% {
+        content: "766"
+    }
+
+    91% {
+        content: "774"
+    }
+
+    92% {
+        content: "783"
+    }
+
+    93% {
+        content: "791"
+    }
+
+    94% {
+        content: "800"
+    }
+
+    95% {
+        content: "808"
+    }
+
+    96% {
+        content: "816"
+    }
+
+    97% {
+        content: "825"
+    }
+
+    98% {
+        content: "833"
+    }
+
+    99% {
+        content: "842"
+    }
+
+    100% {
+        content: "850"
+    }
+}
+
+.stats .complete-projects::after {
+    content: "230";
+    font-weight: 900;
+    animation: complete-projects var(--counting-duration);
+    -webkit-animation: complete-projects var(--counting-duration);
+}
+
+@keyframes complete-projects {
+    0% {
+        content: "2"
+    }
+
+    1% {
+        content: "5"
+    }
+
+    2% {
+        content: "7"
+    }
+
+    3% {
+        content: "9"
+    }
+
+    4% {
+        content: "11"
+    }
+
+    5% {
+        content: "14"
+    }
+
+    6% {
+        content: "16"
+    }
+
+    7% {
+        content: "18"
+    }
+
+    8% {
+        content: "20"
+    }
+
+    9% {
+        content: "23"
+    }
+
+    10% {
+        content: "25"
+    }
+
+    11% {
+        content: "27"
+    }
+
+    12% {
+        content: "30"
+    }
+
+    13% {
+        content: "32"
+    }
+
+    14% {
+        content: "34"
+    }
+
+    15% {
+        content: "36"
+    }
+
+    16% {
+        content: "39"
+    }
+
+    17% {
+        content: "41"
+    }
+
+    18% {
+        content: "43"
+    }
+
+    19% {
+        content: "46"
+    }
+
+    20% {
+        content: "48"
+    }
+
+    21% {
+        content: "50"
+    }
+
+    22% {
+        content: "52"
+    }
+
+    23% {
+        content: "55"
+    }
+
+    24% {
+        content: "57"
+    }
+
+    25% {
+        content: "59"
+    }
+
+    26% {
+        content: "61"
+    }
+
+    27% {
+        content: "64"
+    }
+
+    28% {
+        content: "66"
+    }
+
+    29% {
+        content: "68"
+    }
+
+    30% {
+        content: "71"
+    }
+
+    31% {
+        content: "73"
+    }
+
+    32% {
+        content: "75"
+    }
+
+    33% {
+        content: "77"
+    }
+
+    34% {
+        content: "80"
+    }
+
+    35% {
+        content: "82"
+    }
+
+    36% {
+        content: "84"
+    }
+
+    37% {
+        content: "87"
+    }
+
+    38% {
+        content: "89"
+    }
+
+    39% {
+        content: "91"
+    }
+
+    40% {
+        content: "93"
+    }
+
+    41% {
+        content: "96"
+    }
+
+    42% {
+        content: "98"
+    }
+
+    43% {
+        content: "100"
+    }
+
+    44% {
+        content: "102"
+    }
+
+    45% {
+        content: "105"
+    }
+
+    46% {
+        content: "107"
+    }
+
+    47% {
+        content: "109"
+    }
+
+    48% {
+        content: "112"
+    }
+
+    49% {
+        content: "114"
+    }
+
+    50% {
+        content: "116"
+    }
+
+    51% {
+        content: "118"
+    }
+
+    52% {
+        content: "121"
+    }
+
+    53% {
+        content: "123"
+    }
+
+    54% {
+        content: "125"
+    }
+
+    55% {
+        content: "128"
+    }
+
+    56% {
+        content: "130"
+    }
+
+    57% {
+        content: "132"
+    }
+
+    58% {
+        content: "134"
+    }
+
+    59% {
+        content: "137"
+    }
+
+    60% {
+        content: "139"
+    }
+
+    61% {
+        content: "141"
+    }
+
+    62% {
+        content: "143"
+    }
+
+    63% {
+        content: "146"
+    }
+
+    64% {
+        content: "148"
+    }
+
+    65% {
+        content: "150"
+    }
+
+    66% {
+        content: "153"
+    }
+
+    67% {
+        content: "155"
+    }
+
+    68% {
+        content: "157"
+    }
+
+    69% {
+        content: "159"
+    }
+
+    70% {
+        content: "162"
+    }
+
+    71% {
+        content: "164"
+    }
+
+    72% {
+        content: "166"
+    }
+
+    73% {
+        content: "169"
+    }
+
+    74% {
+        content: "171"
+    }
+
+    75% {
+        content: "173"
+    }
+
+    76% {
+        content: "175"
+    }
+
+    77% {
+        content: "178"
+    }
+
+    78% {
+        content: "180"
+    }
+
+    79% {
+        content: "182"
+    }
+
+    80% {
+        content: "184"
+    }
+
+    81% {
+        content: "187"
+    }
+
+    82% {
+        content: "189"
+    }
+
+    83% {
+        content: "191"
+    }
+
+    84% {
+        content: "194"
+    }
+
+    85% {
+        content: "196"
+    }
+
+    86% {
+        content: "198"
+    }
+
+    87% {
+        content: "200"
+    }
+
+    88% {
+        content: "203"
+    }
+
+    89% {
+        content: "205"
+    }
+
+    90% {
+        content: "207"
+    }
+
+    91% {
+        content: "210"
+    }
+
+    92% {
+        content: "212"
+    }
+
+    93% {
+        content: "214"
+    }
+
+    94% {
+        content: "216"
+    }
+
+    95% {
+        content: "219"
+    }
+
+    96% {
+        content: "221"
+    }
+
+    97% {
+        content: "223"
+    }
+
+    98% {
+        content: "225"
+    }
+
+    99% {
+        content: "228"
+    }
+
+    100% {
+        content: "230"
+    }
+}
+
+.stats .lines-of-code::after {
+    content: "9450";
+    font-weight: 900;
+    animation: lines-of-code var(--counting-duration);
+    -webkit-animation: lines-of-code var(--counting-duration);
+}
+
+@keyframes lines-of-code {
+    0% {
+        content: "94"
+    }
+
+    1% {
+        content: "187"
+    }
+
+    2% {
+        content: "281"
+    }
+
+    3% {
+        content: "374"
+    }
+
+    4% {
+        content: "468"
+    }
+
+    5% {
+        content: "561"
+    }
+
+    6% {
+        content: "655"
+    }
+
+    7% {
+        content: "749"
+    }
+
+    8% {
+        content: "842"
+    }
+
+    9% {
+        content: "936"
+    }
+
+    10% {
+        content: "1029"
+    }
+
+    11% {
+        content: "1123"
+    }
+
+    12% {
+        content: "1216"
+    }
+
+    13% {
+        content: "1310"
+    }
+
+    14% {
+        content: "1403"
+    }
+
+    15% {
+        content: "1497"
+    }
+
+    16% {
+        content: "1591"
+    }
+
+    17% {
+        content: "1684"
+    }
+
+    18% {
+        content: "1778"
+    }
+
+    19% {
+        content: "1871"
+    }
+
+    20% {
+        content: "1965"
+    }
+
+    21% {
+        content: "2058"
+    }
+
+    22% {
+        content: "2152"
+    }
+
+    23% {
+        content: "2246"
+    }
+
+    24% {
+        content: "2339"
+    }
+
+    25% {
+        content: "2433"
+    }
+
+    26% {
+        content: "2526"
+    }
+
+    27% {
+        content: "2620"
+    }
+
+    28% {
+        content: "2713"
+    }
+
+    29% {
+        content: "2807"
+    }
+
+    30% {
+        content: "2900"
+    }
+
+    31% {
+        content: "2994"
+    }
+
+    32% {
+        content: "3088"
+    }
+
+    33% {
+        content: "3181"
+    }
+
+    34% {
+        content: "3275"
+    }
+
+    35% {
+        content: "3368"
+    }
+
+    36% {
+        content: "3462"
+    }
+
+    37% {
+        content: "3555"
+    }
+
+    38% {
+        content: "3649"
+    }
+
+    39% {
+        content: "3743"
+    }
+
+    40% {
+        content: "3836"
+    }
+
+    41% {
+        content: "3930"
+    }
+
+    42% {
+        content: "4023"
+    }
+
+    43% {
+        content: "4117"
+    }
+
+    44% {
+        content: "4210"
+    }
+
+    45% {
+        content: "4304"
+    }
+
+    46% {
+        content: "4398"
+    }
+
+    47% {
+        content: "4491"
+    }
+
+    48% {
+        content: "4585"
+    }
+
+    49% {
+        content: "4678"
+    }
+
+    50% {
+        content: "4772"
+    }
+
+    51% {
+        content: "4865"
+    }
+
+    52% {
+        content: "4959"
+    }
+
+    53% {
+        content: "5052"
+    }
+
+    54% {
+        content: "5146"
+    }
+
+    55% {
+        content: "5240"
+    }
+
+    56% {
+        content: "5333"
+    }
+
+    57% {
+        content: "5427"
+    }
+
+    58% {
+        content: "5520"
+    }
+
+    59% {
+        content: "5614"
+    }
+
+    60% {
+        content: "5707"
+    }
+
+    61% {
+        content: "5801"
+    }
+
+    62% {
+        content: "5895"
+    }
+
+    63% {
+        content: "5988"
+    }
+
+    64% {
+        content: "6082"
+    }
+
+    65% {
+        content: "6175"
+    }
+
+    66% {
+        content: "6269"
+    }
+
+    67% {
+        content: "6362"
+    }
+
+    68% {
+        content: "6456"
+    }
+
+    69% {
+        content: "6550"
+    }
+
+    70% {
+        content: "6643"
+    }
+
+    71% {
+        content: "6737"
+    }
+
+    72% {
+        content: "6830"
+    }
+
+    73% {
+        content: "6924"
+    }
+
+    74% {
+        content: "7017"
+    }
+
+    75% {
+        content: "7111"
+    }
+
+    76% {
+        content: "7204"
+    }
+
+    77% {
+        content: "7298"
+    }
+
+    78% {
+        content: "7392"
+    }
+
+    79% {
+        content: "7485"
+    }
+
+    80% {
+        content: "7579"
+    }
+
+    81% {
+        content: "7672"
+    }
+
+    82% {
+        content: "7766"
+    }
+
+    83% {
+        content: "7859"
+    }
+
+    84% {
+        content: "7953"
+    }
+
+    85% {
+        content: "8047"
+    }
+
+    86% {
+        content: "8140"
+    }
+
+    87% {
+        content: "8234"
+    }
+
+    88% {
+        content: "8327"
+    }
+
+    89% {
+        content: "8421"
+    }
+
+    90% {
+        content: "8514"
+    }
+
+    91% {
+        content: "8608"
+    }
+
+    92% {
+        content: "8701"
+    }
+
+    93% {
+        content: "8795"
+    }
+
+    94% {
+        content: "8889"
+    }
+
+    95% {
+        content: "8982"
+    }
+
+    96% {
+        content: "9076"
+    }
+
+    97% {
+        content: "9169"
+    }
+
+    98% {
+        content: "9263"
+    }
+
+    99% {
+        content: "9356"
+    }
+
+    100% {
+        content: "9450"
+    }
+}
+
+.stats .files-downloaded::after {
+    content: "780";
+    font-weight: 900;
+    animation: files-downloaded var(--counting-duration);
+    -webkit-animation: files-downloaded var(--counting-duration);
+}
+
+@keyframes files-downloaded {
+    0% {
+        content: "8"
+    }
+
+    1% {
+        content: "15"
+    }
+
+    2% {
+        content: "23"
+    }
+
+    3% {
+        content: "31"
+    }
+
+    4% {
+        content: "39"
+    }
+
+    5% {
+        content: "46"
+    }
+
+    6% {
+        content: "54"
+    }
+
+    7% {
+        content: "62"
+    }
+
+    8% {
+        content: "70"
+    }
+
+    9% {
+        content: "77"
+    }
+
+    10% {
+        content: "85"
+    }
+
+    11% {
+        content: "93"
+    }
+
+    12% {
+        content: "100"
+    }
+
+    13% {
+        content: "108"
+    }
+
+    14% {
+        content: "116"
+    }
+
+    15% {
+        content: "124"
+    }
+
+    16% {
+        content: "131"
+    }
+
+    17% {
+        content: "139"
+    }
+
+    18% {
+        content: "147"
+    }
+
+    19% {
+        content: "154"
+    }
+
+    20% {
+        content: "162"
+    }
+
+    21% {
+        content: "170"
+    }
+
+    22% {
+        content: "178"
+    }
+
+    23% {
+        content: "185"
+    }
+
+    24% {
+        content: "193"
+    }
+
+    25% {
+        content: "201"
+    }
+
+    26% {
+        content: "209"
+    }
+
+    27% {
+        content: "216"
+    }
+
+    28% {
+        content: "224"
+    }
+
+    29% {
+        content: "232"
+    }
+
+    30% {
+        content: "239"
+    }
+
+    31% {
+        content: "247"
+    }
+
+    32% {
+        content: "255"
+    }
+
+    33% {
+        content: "263"
+    }
+
+    34% {
+        content: "270"
+    }
+
+    35% {
+        content: "278"
+    }
+
+    36% {
+        content: "286"
+    }
+
+    37% {
+        content: "293"
+    }
+
+    38% {
+        content: "301"
+    }
+
+    39% {
+        content: "309"
+    }
+
+    40% {
+        content: "317"
+    }
+
+    41% {
+        content: "324"
+    }
+
+    42% {
+        content: "332"
+    }
+
+    43% {
+        content: "340"
+    }
+
+    44% {
+        content: "348"
+    }
+
+    45% {
+        content: "355"
+    }
+
+    46% {
+        content: "363"
+    }
+
+    47% {
+        content: "371"
+    }
+
+    48% {
+        content: "378"
+    }
+
+    49% {
+        content: "386"
+    }
+
+    50% {
+        content: "394"
+    }
+
+    51% {
+        content: "402"
+    }
+
+    52% {
+        content: "409"
+    }
+
+    53% {
+        content: "417"
+    }
+
+    54% {
+        content: "425"
+    }
+
+    55% {
+        content: "432"
+    }
+
+    56% {
+        content: "440"
+    }
+
+    57% {
+        content: "448"
+    }
+
+    58% {
+        content: "456"
+    }
+
+    59% {
+        content: "463"
+    }
+
+    60% {
+        content: "471"
+    }
+
+    61% {
+        content: "479"
+    }
+
+    62% {
+        content: "487"
+    }
+
+    63% {
+        content: "494"
+    }
+
+    64% {
+        content: "502"
+    }
+
+    65% {
+        content: "510"
+    }
+
+    66% {
+        content: "517"
+    }
+
+    67% {
+        content: "525"
+    }
+
+    68% {
+        content: "533"
+    }
+
+    69% {
+        content: "541"
+    }
+
+    70% {
+        content: "548"
+    }
+
+    71% {
+        content: "556"
+    }
+
+    72% {
+        content: "564"
+    }
+
+    73% {
+        content: "571"
+    }
+
+    74% {
+        content: "579"
+    }
+
+    75% {
+        content: "587"
+    }
+
+    76% {
+        content: "595"
+    }
+
+    77% {
+        content: "602"
+    }
+
+    78% {
+        content: "610"
+    }
+
+    79% {
+        content: "618"
+    }
+
+    80% {
+        content: "626"
+    }
+
+    81% {
+        content: "633"
+    }
+
+    82% {
+        content: "641"
+    }
+
+    83% {
+        content: "649"
+    }
+
+    84% {
+        content: "656"
+    }
+
+    85% {
+        content: "664"
+    }
+
+    86% {
+        content: "672"
+    }
+
+    87% {
+        content: "680"
+    }
+
+    88% {
+        content: "687"
+    }
+
+    89% {
+        content: "695"
+    }
+
+    90% {
+        content: "703"
+    }
+
+    91% {
+        content: "710"
+    }
+
+    92% {
+        content: "718"
+    }
+
+    93% {
+        content: "726"
+    }
+
+    94% {
+        content: "734"
+    }
+
+    95% {
+        content: "741"
+    }
+
+    96% {
+        content: "749"
+    }
+
+    97% {
+        content: "757"
+    }
+
+    98% {
+        content: "765"
+    }
+
+    99% {
+        content: "772"
+    }
+
+    100% {
+        content: "780"
+    }
+}
